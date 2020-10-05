@@ -17,6 +17,7 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/", include("apps.users.urls")),
     path("accounts/", include("apps.legacy.urls")),
+    path("", include("apps.cms_plugins.urls")),
     path("", include("cms.urls")),
     re_path(r"^sitemap\.xml$", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
 ]

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Board
+{% endblock %}
+
+{% load sekizai_tags %}
+{% load pipeline %}
+{% block content %}
+
+{% addtoblock "css" %} {% stylesheet "cosmos_cms" %} {% endaddtoblock %}
+
+<div class="row align-items-center">
+    <div class="col-sm-6">
+        <img src="{{ board.photo.url }}" class="img-fluid w-100">
+    </div>
+    <div class="col-sm-6 text-center text-light">
+        <h1>{{ board.display_name }}</h1>
+        <p>{{ board.description }}</p>
+    </div>
+</div>
+
+<hr class="divider my-4"/>
+
+{% endblock %}
