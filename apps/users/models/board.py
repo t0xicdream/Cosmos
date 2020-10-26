@@ -6,8 +6,11 @@ from django.db import models
 from django_better_admin_arrayfield.models.fields import ArrayField
 from djangocms_text_ckeditor.fields import HTMLField
 
+# The board model is defined here
+
 
 def validate_aspect_ratio(image):
+    # Function used to check if the board picture uses the correct aspect ratio
     ratio = 1.5
     if not math.isclose(image.width / image.height, ratio, rel_tol=1e-6):
         raise ValidationError("The aspect ratio is not correct. The aspect ratio should be: " + str(ratio))
@@ -43,6 +46,8 @@ class Board(models.Model):
         validators=[validate_aspect_ratio],
     )
 
+    # @property is used to return the output of a function as type of variable so it can be used in the template
+    # https://docs.python.org/3/library/functions.html#property
     @property
     def name(self):
         return self.group.name

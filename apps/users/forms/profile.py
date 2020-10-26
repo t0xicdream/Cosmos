@@ -7,6 +7,8 @@ from django.core.exceptions import ValidationError
 
 from apps.users.models.user import Profile
 
+# https://docs.djangoproject.com/en/3.1/topics/forms/modelforms/
+
 
 class MemberCreateForm(UserCreationForm):
     """
@@ -35,6 +37,11 @@ class MemberCreateForm(UserCreationForm):
 
     error_css_class = "is-invalid"
     required_css_class = "required"
+
+    # The meta class is used to define which model the form should work from
+    # This will generate the fields from the given model automatically.
+    # You need to indicate which fields from the model are required with `fields`
+    # https://docs.djangoproject.com/en/3.1/topics/forms/modelforms/#modelforms-overriding-default-fields
 
     class Meta:
         model = User

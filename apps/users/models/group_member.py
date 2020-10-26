@@ -1,6 +1,8 @@
 from django.contrib.auth.models import Group, User
 from django.db import models
 
+# This model is used to assign a person in a board to a specific role
+
 ROLES = [
     "General Member",
     "Chairperson",
