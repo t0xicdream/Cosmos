@@ -1,3 +1,4 @@
+# This file is used to store the constants used for profile creation
 NATIONALITIES = [
     "Afghan",
     "Albanian",

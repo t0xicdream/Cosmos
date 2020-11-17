@@ -9,6 +9,9 @@ from django.urls import reverse
 
 from apps.users.forms import MemberCreateForm, MemberUpdateForm, ProfileCreateForm, ProfileUpdateForm
 
+#
+# https://docs.djangoproject.com/en/3.1/topics/http/views/
+
 
 def register(request):
     """
@@ -44,15 +47,15 @@ def register(request):
 @login_required
 @transaction.atomic
 def profile(request):
-    """
-    Process User profile form.
 
-    - @login_required: Ensures authenticated user
-    - @transaction.atomic: Ensures both queries to the database are transactions
+    # Process User profile form.
 
-    :param request:
-    :return:
-    """
+    # - @login_required: Ensures authenticated user
+    # - @transaction.atomic: Ensures both queries to the database are transactions
+
+    # :param request:
+    # :return:
+
     if request.method == "POST":
 
         user_form = MemberUpdateForm(data=request.POST, instance=request.user)

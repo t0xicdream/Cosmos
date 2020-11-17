@@ -17,19 +17,18 @@ def validate_aspect_ratio(image):
 
 
 class Board(models.Model):
-    """
-    Extension of Django Group modelt to store extra data of the board.
 
-    - `name`, `permissions`: self-explanatory
+    # Extension of Django Group modelt to store extra data of the board.
 
-    To get all groups of a user you can do this:
+    # - `name`, `permissions`: self-explanatory
 
-    - user.groups.all()
+    # To get all groups of a user you can do this:
 
-    To get all users of a group:
+    # - user.groups.all()
 
-    - group.user_set.all()
-    """
+    # To get all users of a group:
+
+    # - group.user_set.all()
 
     group = models.OneToOneField(Group, on_delete=models.CASCADE)
     description = HTMLField(blank=True)
@@ -52,6 +51,8 @@ class Board(models.Model):
     def name(self):
         return self.group.name
 
+    # @property is used to return the output of a function as type of variable so it can be used in the template
+    # https://docs.python.org/3/library/functions.html#property
     @property
     def permissions(self):
         return self.group.permissions

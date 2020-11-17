@@ -3,6 +3,8 @@ from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin
 
 from apps.users.models import Board
 
+# Used to define the representation of the board in the admin panel
+
 
 @admin.register(Board)
 class BoardAdmin(admin.ModelAdmin, DynamicArrayMixin):

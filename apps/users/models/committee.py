@@ -18,19 +18,18 @@ def validate_aspect_ratio(image):
 
 
 class Committee(models.Model):
-    """
-    Extension of Django Group model to store extra data of committees.
 
-    - `name`, `permissions`: self-explanatory
+    # Extension of Django Group model to store extra data of committees.
 
-    To get all groups of a user you can do this:
+    # - `name`, `permissions`: self-explanatory
 
-    - user.groups.all()
+    # To get all groups of a user you can do this:
 
-    To get all users of a group:
+    # - user.groups.all()
 
-    - group.user_set.all()
-    """
+    # To get all users of a group:
+
+    # - group.user_set.all()
 
     group = models.OneToOneField(Group, on_delete=models.CASCADE)
     description = HTMLField(blank=True)

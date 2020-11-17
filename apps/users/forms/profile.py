@@ -68,12 +68,11 @@ class MemberCreateForm(UserCreationForm):
 
 
 class MemberUpdateForm(UserChangeForm):
-    """
-    A form that allows a user to update their personal information inside of the User model of Django. This includes:
-    first name, last name, TU/e email (username in the database), and email (personal email)
 
-    Extra fields are defined in ProfileUpdateForm.
-    """
+    # A form that allows a user to update their personal information inside of the User model of Django. This includes:
+    # first name, last name, TU/e email (username in the database), and email (personal email)
+
+    # Extra fields are defined in ProfileUpdateForm.
 
     username = forms.EmailField(
         max_length=254, label="TU/e email", help_text="Required. Inform a valid TU/e email address."
@@ -97,9 +96,8 @@ class MemberUpdateForm(UserChangeForm):
 
 
 class ProfileCreateForm(forms.ModelForm):
-    """
-    A form that creates additional information about a COSMOS member.
-    """
+
+    # A form that creates additional information about a COSMOS member.
 
     terms_confirmed = forms.BooleanField(initial=False, required=True)
     subscribed_newsletter = forms.BooleanField(label="Receive newsletter via email", initial=False, required=False)
@@ -123,9 +121,8 @@ class ProfileCreateForm(forms.ModelForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
-    """
-    A form that modifies additional information about a COSMOS member.
-    """
+
+    # A form that modifies additional information about a COSMOS member.
 
     class Meta:
         model = Profile
