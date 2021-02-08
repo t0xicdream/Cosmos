@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db.models.query import QuerySet
 
-from apps.users.factory import get_newsletter_service
+from apps.async_requests.sendgrid.factory import get_newsletter_service
 from apps.users.models import Profile
 
 # from apps.users.tasks import sync_newsletter_subcriptions_task
